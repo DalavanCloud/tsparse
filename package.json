@@ -1,6 +1,6 @@
 {
   "name": "tsparse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dump TypeScript lexical AST",
   "keywords": ["typescript"],
   "main": "tsparse.js",
