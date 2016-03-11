@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "sourceMap": false
+    },
+    "files": [
+        "tsparse.ts",
+        "tsvis.ts",
+        "typings/main.d.ts"
+    ]
+}

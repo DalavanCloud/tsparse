@@ -1,0 +1,18 @@
+{
+  "name": "tsparse",
+  "version": "1.0.0",
+  "description": "dump TypeScript lexical AST",
+  "keywords": ["typescript"],
+  "main": "tsparse.js",
+  "bin": "./tsparse.js",
+  "dependencies": {
+    "typescript": "^1.8.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Evan Martin <evan.martin@gmail.com>",
+  "license": "Apache-2.0"
+}
