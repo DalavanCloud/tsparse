@@ -1,14 +1,23 @@
 tsparse dumps TypeScript lexical ASTs into HTML.
 
-Install like:
+## Install
 
 ```sh
 npm install -g tsparse
 ```
 
-Run like:
+## Use
 
 ```sh
 tsparse foo.ts > foo.html
 google-chrome foo.html
+```
+
+## Build from source
+
+```sh
+npm install -g typings
+typings install
+npm install
+tsc
 ```
