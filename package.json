@@ -5,6 +5,7 @@
   "keywords": ["typescript"],
   "main": "tsparse.js",
   "bin": "./tsparse.js",
+  "repository": "github:martine/tsparse",
   "dependencies": {
     "typescript": "^1.8.0"
   },
