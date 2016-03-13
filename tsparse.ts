@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 
+import {ArgumentParser} from 'argparse';
 import * as ts from 'typescript';
 import * as fs from 'fs';
 import * as path from 'path';
 
-let args = process.argv.slice(2);
-let fileName = args[0];
-let sourceText = fs.readFileSync(fileName, 'utf8');
-let sf = ts.createSourceFile(fileName, sourceText, ts.ScriptTarget.ES5, true);
+let parser = new ArgumentParser({
+    addHelp: true,
+});
+parser.addArgument(['infile'], {
+    help: 'input file',
+});
+let args = parser.parseArgs();
+
+let sourceText = fs.readFileSync(args.infile, 'utf8');
+let sf = ts.createSourceFile(args.infile, sourceText, ts.ScriptTarget.ES5, true);
 
 export interface Span {
     kind: string;
