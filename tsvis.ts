@@ -1,6 +1,6 @@
-import {Span, Data} from './tsparse';
+import {Span, ParsedFile} from './tsparse';
 
-declare const data: Data;
+declare const data: ParsedFile;
 
 let codeDom = document.getElementById('code');
 codeDom.innerText = data.sourceText;

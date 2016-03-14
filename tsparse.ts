@@ -5,6 +5,19 @@ import * as ts from 'typescript';
 import * as fs from 'fs';
 import * as path from 'path';
 
+export interface Span {
+    kind: string;
+    fullStart: number;
+    start: number;
+    end: number;
+    children?: Span[];
+}
+
+export interface ParsedFile {
+    sourceText: string;
+    spans: Span,
+}
+
 let parser = new ArgumentParser({
     addHelp: true,
 });
@@ -22,14 +35,6 @@ if (args.out) {
 }
 let sourceText = fs.readFileSync(args.infile, 'utf8');
 let sf = ts.createSourceFile(args.infile, sourceText, ts.ScriptTarget.ES5, true);
-
-export interface Span {
-    kind: string;
-    fullStart: number;
-    start: number;
-    end: number;
-    children?: Span[];
-}
 
 function gatherSpans(node: ts.Node): Span {
     let children: Span[] = [];
@@ -50,11 +55,7 @@ function readDataFile(name: string): string {
     return fs.readFileSync(path.join(__dirname, name), 'utf8');
 }
 
-export interface Data {
-    sourceText: string;
-    spans: Span,
-}
-let data: Data = {
+let data: ParsedFile = {
     sourceText,
     spans: gatherSpans(sf),
 };
